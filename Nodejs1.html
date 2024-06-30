@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registration Form</h1>
+
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <span id="usernameError" class="error"></span><br></br>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <span id="emailError" class="error"></span><br></br>
+    </div>
+    <div>
+        <label for="Rollnumber">Rollnumber:</label>
+        <input type="Rollnumber" id="Rollnumber" name="rollNumber">
+        <span id="RError" class="error"></span><br></br>
+      </div>
+      <div>
+        <label for="College">College:</label>
+        <input type="college" id="college" name="college">
+        <span id="CError" class="error"></span><br></br>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error"></span><br></br>
+      </div>    
+      <button type="submit">Register</button>
+    </form>
+  
+    <script>
+      function validateForm(event) {
+        event.preventDefault(); 
+        
+       
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        
+        const Rollnumber = document.getElementById('Rollnumber').value;
+        const College = document.getElementById('college').value;
+        const password = document.getElementById('password').value;
+        
+        // Reset previous error messages
+        document.getElementById('usernameError').textContent = '';
+        document.getElementById('emailError').textContent = '';
+        document.getElementById('passwordError').textContent = '';
+        
+      if (!username) {
+        document.getElementById('usernameError').textContent = 'Username is required';
+        return;
+      }
+      
+      if (!email) {
+        document.getElementById('emailError').textContent = 'Email is required';
+        return;
+      }
+
+      if (!password) {
+        document.getElementById('passwordError').textContent = 'Password is required';
+        return;
+      }
+
+      
+      console.log('Form submitted successfully');
+    }
+  </script>
+</body>
+</html>
+  
+  
